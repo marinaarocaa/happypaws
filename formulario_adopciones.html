@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>HappyPaws</title>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <header>
+    <img src="IMAGENES/logo happy paws.png" width="100px" height="100px" class="logo" alt="logo">
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- esto es de los botones-->
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="adopciones.html">Adopciones</a>
+      <a href="ayudanos.html">Ayúdanos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <a href="perfil.html" class="sesion">Mi Perfil</a>
+    <!--BOTÓN SERA SOLO VISIBLE EN MEDIA-->
+    <a href="perfil.html" class="icono-perfil" aria-label="Mi Perfil">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="profile-svg">
+        <path fill-rule="evenodd"
+          d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+          clip-rule="evenodd" />
+      </svg>
+    </a>
+  </header>
+
+  <main class="adoption-main">
+    <div class="fondo-adopciones">
+      <!--AQUI EMPIEZA EL FORMULARIO-->
+      <div class="form-wrapper">
+        <form id="formAdopcion"
+          action="https://script.google.com/macros/s/AKfycbzNP8J3bvuTQ33-PN1lNLMqIaUTMliRu8g0bhSUYOKGlysfGC4xRJch8b5ALtWMz5UT/exec"
+          method="POST" class="adoption-form">
+
+          <h2>Formulario de Adopción</h2>
+          <p class="form-subtitle">Completa los datos para iniciar el proceso de adopción de tu nuevo mejor amigo.</p>
+
+          <!-- Datos del adoptante -->
+          <fieldset>
+            <legend>Información del adoptante</legend>
+
+            <div class="form-group">
+              <label>Nombre completo*</label>
+              <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email*</label>
+                <input type="email" name="email" placeholder="ejemplo@correo.com" required>
+              </div>
+              <div class="form-group">
+                <label>Teléfono*</label>
+                <input type="tel" name="telefono" placeholder="Tu número de teléfono" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Dirección completa*</label>
+              <input type="text" name="direccion" placeholder="Calle, número, piso..." required>
+            </div>
+
+            <div class="form-group">
+              <label>Ciudad</label>
+              <input type="text" name="ciudad" placeholder="Tu ciudad">
+            </div>
+          </fieldset>
+
+
+          <!-- Mascota a adoptar -->
+          <fieldset>
+            <legend>Información del animal</legend>
+
+            <div class="form-group">
+              <label>Nombre del animal que deseas adoptar*</label>
+              <input type="text" name="animal" placeholder="Nombre de la mascota" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>¿Tienes otros animales en casa?</label>
+                <select name="otros_animales">
+                  <option value="si">Sí</option>
+                  <option value="no" selected>No</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>¿Tienes experiencia previa?</label>
+                <select name="experiencia">
+                  <option value="si">Sí</option>
+                  <option value="no">No</option>
+                  <option value="poca">Poca</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Cuéntanos por qué quieres adoptarlo</label>
+              <textarea name="motivo" rows="4" placeholder="Escribe aquí tus motivos..."></textarea>
+            </div>
+          </fieldset>
+
+
+          <!-- Condiciones -->
+          <fieldset class="terms-fieldset">
+            <legend>Compromiso como adoptante</legend>
+            <p>Me comprometo a cuidar, amar y dar un hogar seguro al animal adoptado.</p>
+            <div class="checkbox-group">
+              <input type="checkbox" id="terminos" name="terminos" required>
+              <label for="terminos">Acepto los términos y condiciones de adopción*</label>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn-submit-adoption">Enviar Solicitud de Adopción</button>
+        </form>
+      </div>
+
+      <!-- POPUP DE CONFIRMACIÓN -->
+      <div id="popup-success" class="popup-success">
+        <div class="popup-box">
+          <div class="popup-icon">❤️</div>
+          <h3>¡Solicitud enviada!</h3>
+          <p>Gracias por confiar en Happy Paws 🧡<br>Revisaremos tu solicitud y nos pondremos en contacto pronto.</p>
+          <button id="cerrarPopup" class="btn-close-popup">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <!-- IZQUIERDA -->
+      <div class="footer-left">
+        <a href="perfil.html">
+          <img src="IMAGENES/iconoSESIO╠üN.png" alt="Perfil" class="perfil-btn">
+        </a>
+      </div>
+
+      <!-- CENTRO -->
+      <div class="footer-center">
+        <img src="IMAGENES/logo happy paws.png" alt="Logo" class="logo-footer">
+        <div class="footer-links">
+          <a href="index.html">Inicio</a>
+          <a href="adopciones.html">Adopciones</a>
+          <a href="ayudanos.html">Ayúdanos</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+
+      <!-- DERECHA -->
+      <div class="footer-right">
+        <img src="IMAGENES/instagram.png" alt="Instagram" class="social-icon">
+        <img src="IMAGENES/facebook.png" alt="Facebook" class="social-icon">
+        <img src="IMAGENES/tiktok.png" alt="TikTok" class="social-icon">
+      </div>
+    </div>
+  </footer>
+
+
+
+
+</body>
+
+<script>
+  document.getElementById("formAdopcion").addEventListener("submit", function (e) {
+    e.preventDefault(); // evita recargar la página
+
+    fetch(this.action, {
+      method: "POST",
+      body: new FormData(this)
+    })
+      .then(() => {
+        document.getElementById("popup-success").style.display = "flex";
+        this.reset(); // vacía formulario
+      })
+      .catch(() => {
+        alert("Hubo un error enviando el formulario");
+      });
+  });
+
+  document.getElementById("cerrarPopup").addEventListener("click", function () {
+    document.getElementById("popup-success").style.display = "none";
+  });
+</script>
